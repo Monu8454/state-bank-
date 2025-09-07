@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SecureBank — Demo Banking Landing Page </title>
+  <style>
+    :root{--accent:#0b5ed7;--bg:#f6f8fb;--card:#ffffff;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;background:var(--bg);color:#0f172a}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#0366d6);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+    nav a{color:inherit;text-decoration:none;font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:30px;align-items:center;padding:28px 0}
+    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    h1{font-size:28px;margin:0 0 12px}
+    p.lead{color:var(--muted);margin:0 0 18px}
+    .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .feature{padding:14px;border-radius:10px;background:linear-gradient(180deg,#fbfdff,#ffffff);border:1px solid rgba(11,94,215,0.06)}
+    form input,form select{width:100%;padding:10px;margin-bottom:10px;border:1px solid #e6eef8;border-radius:8px}
+    form button{width:100%;padding:10px;border-radius:8px;border:0;background:var(--accent);color:#fff;font-weight:700}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    footer{margin-top:28px;padding:18px 0;color:var(--muted)}
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .features{grid-template-columns:repeat(2,1fr)}
+      nav ul{display:none}
+    }
+    @media(max-width:520px){
+      .features{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      h1{font-size:22px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">SB</div>
+        <div>
+          <div style="font-weight:800">SecureBank</div>
+          <div style="font-size:12px;color:var(--muted)">Safe. Simple. Digital.</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#accounts">Accounts</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="card">
+          <h1>Modern banking for everyday life</h1>
+          <p class="lead">Open an account, manage payments, and access support — all from your phone or desktop. This is a demo template for learning and design; it is not a real bank website.</p>
+          <a class="cta" href="#open-account">Open an account </a>
+
+          <div class="features">
+            <div class="feature">
+              <strong>Zero monthly fees</strong>
+              <div style="font-size:13px;color:var(--muted);margin-top:8px">No maintenance fees on basic savings.</div>
+            </div>
+            <div class="feature">
+              <strong>Instant transfers</strong>
+              <div style="font-size:13px;color:var(--muted);margin-top:8px">Send and receive money quickly.</div>
+            </div>
+            <div class="feature">
+              <strong>24/7 support</strong>
+              <div style="font-size:13px;color:var(--muted);margin-top:8px">Chat and phone support whenever you need it.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
+          <div class="card" style="flex:1;min-width:220px">
+            <strong>Accounts</strong>
+            <div style="font-size:13px;color:var(--muted);margin-top:8px">Savings, Current, Fixed Deposit — simple account types for personal &amp; business.</div>
+          </div>
+          <div class="card" style="flex:1;min-width:220px">
+            <strong>Loans</strong>
+            <div style="font-size:13px;color:var(--muted);margin-top:8px">Personal and business loans with transparent rates.</div>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0">Customer Login </h3>
+          <form onsubmit="event.preventDefault();alert('This demo form is non-functional.');">
+            <label for="user">User ID</label>
+            <input id="user" placeholder="Enter user ID">
+            <label for="pass">Password</label>
+            <input id="pass" type="password" placeholder="Password">
+            <button>Login</button>
+            <div style="font-size:12px;color:var(--muted);margin-top:8px">Demo only — do not enter real credentials.</div>
+          </form>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <strong>Quick actions</strong>
+          <div style="margin-top:10px">
+            <a href="#" style="display:block;text-decoration:none;padding:10px;border-radius:8px;border:1px solid #eef6ff;margin-bottom:8px">Apply for account</a>
+            <a href="#" style="display:block;text-decoration:none;padding:10px;border-radius:8px;border:1px solid #eef6ff">Find branch</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="services" style="margin-top:20px">
+      <div class="card">
+        <h2 style="margin-top:0">Services we offer</h2>
+        <div class="grid-2" style="margin-top:12px">
+          <div>
+            <h4>Digital Banking</h4>
+            <p style="margin:6px 0;color:var(--muted)">Mobile &amp; internet banking with secure two-factor authentication.</p>
+            <h4>Cards & Payments</h4>
+            <p style="margin:6px 0;color:var(--muted)">Debit, credit, and unified payments for easy checkout.</p>
+          </div>
+          <div>
+            <h4>Loans & Credit</h4>
+            <p style="margin:6px 0;color:var(--muted)">Personal, home, and business lending options.</p>
+            <h4>Wealth & Insurance</h4>
+            <p style="margin:6px 0;color:var(--muted)">Investment products and insurance partnerships.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="open-account" style="margin-top:18px">
+      <div class="card">
+        <h3 style="margin-top:0">Open an account (Demo)</h3>
+        <form onsubmit="event.preventDefault();alert('Demo account request submitted (not real).');">
+          <div class="grid-2">
+            <input placeholder="Full name">
+            <input placeholder="Mobile number">
+          </div>
+          <input placeholder="Email address">
+          <select>
+            <option>Choose account type</option>
+            <option>Saving Account</option>
+            <option>Current Account</option>
+          </select>
+          <button>Submit </button>
+        </form>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:18px">
+      <div class="card">
+        <h3 style="margin-top:0">Contact</h3>
+        <p style="color:var(--muted);margin:6px 0">Email: support@securebank.example (demo) — Phone: 1800-XXX-XXXX</p>
+      </div>
+    </section
